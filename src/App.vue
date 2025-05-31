@@ -1,5 +1,15 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
+import { onMounted } from 'vue'
+import { useAuthStore } from './stores/auth'
+
+const auth = useAuthStore()
+
+onMounted(async () => {
+  if (auth.accessToken && !auth.userProfile) {
+    await auth.fetchUserProfile()
+  }
+})
 </script>
 
 <template>

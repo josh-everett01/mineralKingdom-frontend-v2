@@ -6,6 +6,7 @@ import HomeView from '../views/HomeView.vue'
 import DashboardView from '../views/DashboardView.vue'
 // router/index.js
 import { useAuthStore } from '../stores/auth'
+import UserProfileView from '../views/UserProfileView.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView },
@@ -15,6 +16,12 @@ const routes = [
   {
     path: '/dashboard',
     component: DashboardView,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/profile',
+    name: 'UserProfile',
+    component: UserProfileView,
     meta: { requiresAuth: true }
   }
 ]
