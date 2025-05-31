@@ -50,6 +50,7 @@ const handleLogin = async () => {
   error.value = ''
   try {
     await authStore.login(email.value, password.value)
+    await authStore.fetchUserProfile()
     router.push('/dashboard')
   } catch (err) {
     console.error('Login error:', err) // ✅ Log the full error

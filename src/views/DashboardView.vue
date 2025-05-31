@@ -3,7 +3,7 @@
     <h1 class="text-3xl font-bold mb-2">Welcome to Your Dashboard</h1>
     <p class="text-gray-600 mb-6">
       You are logged in as
-      <strong>{{ auth.user?.email || "Unknown user" }}</strong>
+      <strong>{{ auth.userProfile?.displayName || "Unknown user" }}</strong>
     </p>
 
     <section class="mb-6">
